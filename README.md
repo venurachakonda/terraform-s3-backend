@@ -1,2 +1,3 @@
-# terraform-s3-backend
-Terraform remote state management with AWS S3 backend
+# Terraform remote state management with S3 backend
+
+Samples for my blog post
