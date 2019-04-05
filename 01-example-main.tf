@@ -30,14 +30,3 @@ resource "aws_dynamodb_table" "terraform-state-lock" {
     Name = "Terraform State Lock Table"
   }
 }
-
-
-terraform {
-  backend "s3" {
-    encrypt = true                             //encrypts data
-    bucket = "s3-terraform-state-storage"      //name of s3 bucket
-    region = "us-east-1"                       //region
-    key = remote/terraform.tfstate             //name of tfstate file
-    dynamo_table = "terraform-state-lock"      //dynamoDB table for state locking
-  }
-}
